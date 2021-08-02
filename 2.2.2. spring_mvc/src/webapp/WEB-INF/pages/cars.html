@@ -9,12 +9,22 @@
 <body>
 <h1>th:each</h1>
 
-<ul>
-    <th:block th:each="car : ${cars}">
-        <li th:utext="${car}">..</li>
-    </th:block>
-</ul>
+<table th:border="1" >
+    <tr>
+        <th>name</th>
+        <th>model</th>
+        <th> name</th>
 
+    </tr>
+
+    <tr th:each="car, state : ${cars}">
+        <td th:utext="${car.getName()}">name</td>
+        <td th:utext="${car.getModel()}">model</td>
+        <td th:utext="${car.getNumber()}">number</td>
+
+    </tr>
+
+</table>
 </body>
 
 </html>

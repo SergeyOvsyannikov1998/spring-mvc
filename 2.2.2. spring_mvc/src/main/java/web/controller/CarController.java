@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import web.config.Test;
 import web.model.Car;
 import web.service.ServiceCar;
 import web.service.ServiceCarImpl;
@@ -20,6 +19,7 @@ public class CarController {
         if (count!=null){
             List<Car> cars = serviceCar.getCar(count);
             model.addAttribute("cars", cars);
+
         } else {
             List<Car> cars = serviceCar.getCar(5);
             model.addAttribute("cars", cars);
